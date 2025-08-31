@@ -11,14 +11,14 @@ if not os.path.exists(MODEL_PATH):
     print("Downloading model from Google Drive...")
     url = "https://drive.google.com/file/d/1tcHvT_VwWQr74zMxPiVU2iH9AeF27ieo/view?usp=drive_link"
     gdown.download(url, MODEL_PATH, quiet=False)
-
+model = load_model(MODEL_PATH)
 
 
 app = Flask(__name__)
 
 # Load the trained model
 # model = load_model("dog_cat_model.h5")
-model = load_model(MODEL_PATH)
+
 def predict_image(img_path):
     img = image.load_img(img_path, target_size=(256, 256))  # তোমার মডেলের input size
     img_array = image.img_to_array(img) / 255.0
