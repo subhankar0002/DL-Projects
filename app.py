@@ -3,15 +3,17 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
-import gdown
+import keras
+import requests
 
 MODEL_PATH = "dog_cat_model.h5"
 
 if not os.path.exists(MODEL_PATH):
-    print("Downloading model from Google Drive...")
-    url = "https://drive.google.com/file/d/1tcHvT_VwWQr74zMxPiVU2iH9AeF27ieo/view?usp=drive_link"
-    gdown.download(url, MODEL_PATH, quiet=False)
-model = load_model(MODEL_PATH)
+    url = "ttps://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5"
+    r = requests.get(url)
+    with open(MODEL_PATH, "wb") as f:
+        f.write(r.content)
+model = keras.models.load_model(MODEL_PATH)
 
 
 app = Flask(__name__)
@@ -20,11 +22,11 @@ app = Flask(__name__)
 # model = load_model("dog_cat_model.h5")
 
 def predict_image(img_path):
-    img = image.load_img(img_path, target_size=(256, 256))  # তোমার মডেলের input size
+    img = image.load_img(img_path, target_size=(256, 256)) 
     img_array = image.img_to_array(img) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
 
-    prediction = model.predict(img_array)[0][0]  # ধরছি binary classification
+    prediction = model.predict(img_array)[0][0]  
     if prediction > 0.5:
         return "Dog"
     else:
