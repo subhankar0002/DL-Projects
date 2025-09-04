@@ -9,7 +9,7 @@ import requests
 MODEL_PATH = "dog_cat_model.h5"
 
 if not os.path.exists(MODEL_PATH):
-    url = "ttps://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5"
+    url = "https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5"
     r = requests.get(url)
     with open(MODEL_PATH, "wb") as f:
         f.write(r.content)
