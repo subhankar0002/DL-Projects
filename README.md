@@ -40,27 +40,17 @@ In `app.py`, the model will automatically load from this link if not found local
 ## Result 
 ![alt text](image-3.png)
 
-📌 About
+## 📌 About
 
-This project is part of my Deep Learning experiments.
+- This project is part of my Deep Learning experiments.
+- No pre-trained model was used (like VGG16, ResNet, etc.).
+- CNN was designed and trained manually.
+- Accuracy achieved: 83%
+- Future goal: Optimize and reach 95%+ accuracy.
 
-No pre-trained model was used (like VGG16, ResNet, etc.).
+Author:- Subhankar Saha
+- 🌐 Portfolio(https://subhankar0002.github.io/My-portfolio/)
+- 💼 LinkedIn(https://www.linkedin.com/in/subhankar0002/)
 
-CNN was designed and trained manually.
-
-Accuracy achieved: 83%
-
-Future goal: Optimize and reach 95%+ accuracy.
-
-👨‍💻 Author
-
-Subhankar Saha
-
-🌐 Portfolio(https://subhankar0002.github.io/My-portfolio/)
-
-💼 LinkedIn(https://www.linkedin.com/in/subhankar0002/)
-
-
-📝 License
-
+License
 © 2025 Future Innovator. All Rights Reserved.
