@@ -3,7 +3,7 @@
 A deep learning web application that classifies whether an uploaded image is of a Dog or a Cat .  
 This project is built using TensorFlow, Flask, HTML, CSS, and JavaScript.  
 
-🔗 **Live Demo (Coming Soon after Deployment)**  
+🔗 **Live Demo**  https://dog-cat-classifier-6cga.onrender.com/
 
 ---
 
@@ -17,28 +17,21 @@ This project is built using TensorFlow, Flask, HTML, CSS, and JavaScript.
 ---
 
 ## Tech Stack  
-- **Backend**: Flask (Python)  
+- **Backend**: Flask 
 - **Frontend**: HTML, CSS, JavaScript  
-- **Model**: TensorFlow & Keras (Custom CNN)  
-- **Deployment**: Render & Hugging Face Spaces  
+- **Model**: TensorFlow & Keras 
+- **Deployment**: Render   
 
 ---
 
 ## Model Download  
 Since the `.h5` model file is hosted on Hugging Face.  
+ [Download Model (dog_cat_model.h5)](https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5) 
+A compressed version of the model is also available in this GitHub repository. 
 
-👉 [Download Model (dog_cat_model.h5)](https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5)  
-
-In `app.py`, the model will automatically load from this link if not found locally.  
+`app.py` is configured to automatically download the model from Hugging Face if it is not found locally.  
 
 ---
-
-## Screenshots
-![alt text](image-2.png)
-## Upload Section
-![alt text](image-1.png)
-## Result 
-![alt text](image-3.png)
 
 ## 📌 About
 
@@ -49,8 +42,8 @@ In `app.py`, the model will automatically load from this link if not found local
 - Future goal: Optimize and reach 95%+ accuracy.
 
 Author:- Subhankar Saha
-- 🌐 Portfolio(https://subhankar0002.github.io/My-portfolio/)
-- 💼 LinkedIn(https://www.linkedin.com/in/subhankar0002/)
+- 🌐 [Portfolio](https://subhankar0002.github.io/My-portfolio/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/subhankar0002/)
 
 License
 © 2025 Future Innovator. All Rights Reserved.
