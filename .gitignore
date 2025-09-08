@@ -1,2 +1,4 @@
 *.h5
 *.hdf5
+convert.py
+upload_model.py
