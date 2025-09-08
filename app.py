@@ -1,32 +1,32 @@
 from flask import Flask, render_template, request
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
-import keras
-import requests
+import tensorflow as tf
+from tensorflow.keras.preprocessing import image
 
-MODEL_PATH = "dog_cat_model.h5"
+# Use TFLite model instead of h5
+MODEL_PATH = "dog_cat_model.tflite"
 
-if not os.path.exists(MODEL_PATH):
-    url = "https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5"
-    r = requests.get(url)
-    with open(MODEL_PATH, "wb") as f:
-        f.write(r.content)
-model = keras.models.load_model(MODEL_PATH)
+# Load TFLite model
+interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
+interpreter.allocate_tensors()
 
+# Get input & output details for prediction
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
 
 app = Flask(__name__)
 
-# Load the trained model
-# model = load_model("dog_cat_model.h5")
-
 def predict_image(img_path):
-    img = image.load_img(img_path, target_size=(256, 256)) 
+    img = image.load_img(img_path, target_size=(256, 256))
     img_array = image.img_to_array(img) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)
+    img_array = np.expand_dims(img_array, axis=0).astype(np.float32)
 
-    prediction = model.predict(img_array)[0][0]  
+    # Run inference
+    interpreter.set_tensor(input_details[0]['index'], img_array)
+    interpreter.invoke()
+    prediction = interpreter.get_tensor(output_details[0]['index'])[0][0]
+
     if prediction > 0.5:
         return "Dog"
     else:
