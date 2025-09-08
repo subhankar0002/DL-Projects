@@ -26,8 +26,8 @@ This project is built using TensorFlow, Flask, HTML, CSS, and JavaScript.
 
 ## Model Download  
 Since the `.h5` model file is hosted on Hugging Face.  
- [Download Model (dog_cat_model.h5)](https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5) 
-A compressed version of the model is also available in this GitHub repository. 
+- Download Model(Orginal):-  [(dog_cat_model.h5)](https://huggingface.co/Subhankar002/dog-vs-cat-classifier/resolve/main/dog_cat_model.h5) 
+- A compressed version of the model is also available in this GitHub repository. 
 
 `app.py` is configured to automatically download the model from Hugging Face if it is not found locally.  
 
@@ -46,4 +46,4 @@ Author:- Subhankar Saha
 - 💼 [LinkedIn](https://www.linkedin.com/in/subhankar0002/)
 
 License
-© 2025 Future Innovator. All Rights Reserved.
+- © 2025 Future Innovator. All Rights Reserved.
